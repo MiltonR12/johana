@@ -10,8 +10,9 @@ const images = [img1, img2, img3, img4, img5, img6, img7];
 import { history } from "../data/historia.json";
 import AOS from 'aos'
 import 'aos/dist/aos.css';
+import Cargar from './Cargar';
 
-function Historia() {
+function Historia({ visible }) {
 
   const [loading, setLoading] = useState(true)
 
@@ -27,16 +28,11 @@ function Historia() {
   }, [])
 
   if (loading) {
-    return <div className="text-center p-10">
-      <h1 className="text-5xl text-red-600 font-bold mb-10">
-        LA QUIERO MUCHO NIÑA
-      </h1>
-      <h2 className="text-3xl">CARGANDO HISTORIA...</h2>
-    </div>
+    return <Cargar />
   }
 
   return (
-    <div className="text-zinc-200">
+    <div className={`text-zinc-200 transition-all ${visible ? 'hidden' : ''}`}  >
       {
         history.map((parrafo, index) => (
           <div
