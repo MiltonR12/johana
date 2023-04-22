@@ -5,8 +5,8 @@ function Poemas() {
   return (
     <div className='border-red-600 border-2 my-5 p-5 flex flex-col gap-3' >
       {
-        poemas.map(item => (
-          <Poema poema={item} />
+        poemas.map((item, index) => (
+          <Poema poema={item} key={index} />
         ))
       }
     </div>

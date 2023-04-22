@@ -44,7 +44,7 @@ function Historia({ visible }) {
             <div className="md:w-1/3 flex justify-center">
               <span className="md:w-5 bg-zinc-800" />
             </div>
-            <div className="md:w-1/3 flex justify-center" data-aos="fade-up">
+            <div className="md:w-1/3 flex justify-center overflow-hidden" data-aos="fade-up">
               <img
                 src={images[index]}
                 className="rounded-md w-9/12 md:w-40"
